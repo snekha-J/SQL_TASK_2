@@ -1,35 +1,5 @@
-use library;
-## TABLE CREATED FOR BOOKS
-CREATE TABLE books(
-BookID INT PRIMARY KEY,
-Title VARCHAR(50),
-Author VARCHAR(30),
-Published_Year INT,
-Genre INT,
-Available_copies INT
-);
-alter table book rename to books;
-alter table book modify Genre varchar(20);
-describe books;
-##TABLE CREATED FOR MEMBER TABLE
-CREATE TABLE Members(
-Member_ID INT PRIMARY KEY,
-Member_Name VARCHAR(20) NOT NULL,
-Email VARCHAR(30) UNIQUE,
-Join_Date DATE NOT NULL
-);
 
-##CREATE TABLE FOR BORROWING BOOKS
-CREATE TABLE Borrow_Books(
-Borrow_ID INT PRIMARY KEY,
-BookID INT,
-Member_ID INT,
-Borrow_Date DATE,
-Return_Date DATE,
-FOREIGN KEY(BookID)REFERENCES book(BookID),
-FOREIGN KEY(Member_ID)REFERENCES Members(Member_ID)
-);
-                                         #---------------TASK2------------------#
+                                 #---------------TASK2------------------#
 #-------------------INSERT VALUES INTO BOOKS TABLE OF 50 ROWS-------------------#
 INSERT INTO books (BookID, Title,Author,Published_Year, Genre, Available_copies) VALUES
 ('0001', 'The Great Gatsby', 'Scribner', 1925, 'Classic', 10),
